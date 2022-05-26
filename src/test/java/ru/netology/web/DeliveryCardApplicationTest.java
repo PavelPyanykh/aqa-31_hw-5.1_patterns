@@ -34,7 +34,7 @@ public class DeliveryCardApplicationTest {
         $(".notification__content").shouldHave(Condition.text("Встреча успешно запланирована на " + initialDate), Duration.ofSeconds(15));
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").setValue(rescheduledDate);
-        $(withText("Запланировать!")).click();
+        $(withText("Запланировать")).click();
         $(withText("Необходимо подтверждение")).shouldBe(Condition.visible, Duration.ofSeconds(15));
         $(withText("Перепланировать")).click();
         $(".notification__content").shouldHave(Condition.text("Встреча успешно запланирована на " + rescheduledDate), Duration.ofSeconds(15));
